@@ -24,8 +24,8 @@ npm i type-args-usage -s
 
 MIT © [Zhang Kai Yu][license-url]
 
-[npm-image]: https://img.shields.io/npm/v/type-usage.svg?style=flat-square&color=ff69b4&logo=react
-[npm-url]: https://npmjs.org/package/type-usage
+[npm-image]: https://img.shields.io/npm/v/type-args-usage.svg?style=flat-square&color=ff69b4&logo=react
+[npm-url]: https://npmjs.org/package/type-args-usage
 [travis-image]: https://img.shields.io/travis/zhangkaiyulw/type-usage.svg?style=flat-square&color=blue&logo=travis
 [travis-url]: https://travis-ci.org/zhangkaiyulw/type-usage
 [cov-image]: https://img.shields.io/codecov/c/github/zhangkaiyulw/type-usage/master.svg?style=flat-square&logo=codecov
