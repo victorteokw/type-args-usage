@@ -1,4 +1,5 @@
 import { optionsToUsage } from '../src/index';
+import chalk from 'chalk';
 
 describe("optionsToUsage: ", () => {
 
@@ -11,7 +12,9 @@ describe("optionsToUsage: ", () => {
           desc: 'the file input.'
         }
       });
-      console.log(usage);
+      expect(usage).toBe(
+        chalk.bold('--file') + chalk.dim(' ' + chalk.underline('string')) + ' '.repeat(4) + 'the file input.'
+      );
     });
 
     it("string[]", () => {
@@ -21,7 +24,9 @@ describe("optionsToUsage: ", () => {
           desc: 'the files input.'
         }
       });
-      console.log(usage);
+      expect(usage).toBe(
+        chalk.bold('--files') + chalk.dim(' ' + chalk.underline('string') + ' ...') + ' '.repeat(4) + 'the files input.'
+      );
     });
 
     it("number", () => {
@@ -31,7 +36,9 @@ describe("optionsToUsage: ", () => {
           desc: 'the age of the user.'
         }
       });
-      console.log(usage);
+      expect(usage).toBe(
+        chalk.bold('--age') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + 'the age of the user.'
+      );
     });
 
     it("number[]", () => {
@@ -41,7 +48,9 @@ describe("optionsToUsage: ", () => {
           desc: 'the ages of the users.'
         }
       });
-      console.log(usage);
+      expect(usage).toBe(
+        chalk.bold('--ages') + chalk.dim(' ' + chalk.underline('number') + ' ...') + ' '.repeat(4) + 'the ages of the users.'
+      );
     });
 
     it("boolean", () => {
@@ -51,13 +60,24 @@ describe("optionsToUsage: ", () => {
           desc: 'whether use power output.'
         }
       });
-      console.log(usage);
+      expect(usage).toBe(
+        chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.'
+      );
     });
 
   });
 
-  describe("display alias if it's present.", () => {
-
+  it("display alias if it's present.", () => {
+    const usage = optionsToUsage({
+      power: {
+        type: 'boolean',
+        alias: 'p',
+        desc: 'whether use power output.'
+      }
+    });
+    expect(usage).toBe(
+      chalk.bold('-p, ') + chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.'
+    );
   });
 
   describe("put spaces before the line if leading spaces are present.", () => {
