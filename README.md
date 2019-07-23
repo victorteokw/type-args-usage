@@ -8,7 +8,8 @@ type-args-usage
 [![License][license-image]][license-url]
 [![PR Welcome][pr-image]][pr-url]
 
-
+Paired with [type-args](https://github.com/zhangkaiyulw/type-args), type-args-usage is a usage message formatter for option data types defined by type-args.
+This is inspired by [command-line-usage](https://github.com/75lb/command-line-usage).
 
 ## Installation
 
