@@ -114,4 +114,22 @@ describe("optionsToUsage: ", () => {
     );
   });
 
+  it("wraps long descriptions into the next line.", () => {
+    const usage = optionsToUsage({
+      version: {
+        type: 'boolean',
+        desc: 'Display version.'
+      },
+      veryVeryVeryLong: {
+        type: 'number',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      }
+    });
+    console.log(usage);
+    expect(usage).toBe(
+      chalk.bold('--version') + ' '.repeat(23) + 'Display version.\n' +
+      chalk.bold('--very-very-very-long') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + `Lorem ipsum dolor sit amet, consectetur adipisic\n${' '.repeat(32)}ing elit, sed do eiusmod tempor incididunt ut la\n${' '.repeat(32)}bore et dolore magna aliqua. Ut enim ad minim ve\n${' '.repeat(32)}niam, quis nostrud exercitation ullamco laboris \n${' '.repeat(32)}nisi ut aliquip ex ea commodo consequat.`
+    );
+  });
+
 });

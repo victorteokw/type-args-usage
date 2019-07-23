@@ -2,7 +2,6 @@ import { OptionRules } from 'type-args';
 import * as slugify from '@sindresorhus/slugify';
 import chalk from 'chalk';
 import * as stringLength from 'string-length';
-import { join } from 'path';
 
 export const optionsToUsage = function(
   optionRules: OptionRules,
@@ -42,7 +41,9 @@ export const optionsToUsage = function(
   const targetLength = longest + 4;
   for (const key in optionRules) {
     const padding = ' '.repeat(targetLength - stringLength(left[key]));
-    values[key] = left[key] + padding + optionRules[key].desc;
+    const descLength = lineWidth - targetLength;
+    const desc = (optionRules[key].desc.match(new RegExp(`.{1,${descLength}}`, 'g')) as string[]).join(`\n${' '.repeat(targetLength)}`);
+    values[key] = left[key] + padding + desc;
   }
   return (Object.values(values) as string[]).join('\n');
 };
