@@ -80,8 +80,38 @@ describe("optionsToUsage: ", () => {
     );
   });
 
-  describe("put spaces before the line if leading spaces are present.", () => {
+  it("put spaces before the line if leading spaces are present.", () => {
+    const usage = optionsToUsage({
+      power: {
+        type: 'boolean',
+        desc: 'whether use power output.'
+      }
+    }, 4);
+    expect(usage).toBe(
+      ' '.repeat(4) + chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.'
+    );
+  });
 
+  it("aligns description.", () => {
+    const usage = optionsToUsage({
+      help: {
+        type: 'boolean',
+        desc: 'display help.'
+      },
+      version: {
+        type: 'boolean',
+        desc: 'display version.'
+      },
+      veryVeryVeryLong: {
+        type: 'number',
+        desc: 'the longest number.'
+      }
+    });
+    expect(usage).toBe(
+      chalk.bold('--help') + ' '.repeat(26) + 'display help.\n' +
+      chalk.bold('--version') + ' '.repeat(23) + 'display version.\n' +
+      chalk.bold('--very-very-very-long') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + 'the longest number.'
+    );
   });
 
 });
