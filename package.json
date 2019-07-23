@@ -1,5 +1,5 @@
 {
-  "name": "type-usage",
+  "name": "type-args-usage",
   "version": "0.0.1",
   "description": "The usage text generator for type-args.",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
     "test": "jest",
     "test-cov": "jest --coverage",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm test",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
@@ -48,8 +48,10 @@
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.8",
     "jest": "^24.8.0",
+    "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3"
   }
 }

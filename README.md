@@ -1,4 +1,4 @@
-type-usage
+type-args-usage
 ==============
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
@@ -15,7 +15,7 @@ type-usage
 Install this package with `npm`.
 
 ```bash
-npm i type-usage -s
+npm i type-args-usage -s
 ```
 
 ## Usage
