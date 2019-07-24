@@ -1,6 +1,6 @@
 {
   "name": "type-args-usage",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "The usage text generator for type-args.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -41,8 +41,10 @@
   "dependencies": {
     "@sindresorhus/slugify": "^0.9.1",
     "chalk": "^2.4.2",
-    "string-length": "^3.1.0",
-    "type-args": "^0.1.2"
+    "string-length": "^3.1.0"
+  },
+  "peerDependencies": {
+    "type-args": "^0.2.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
