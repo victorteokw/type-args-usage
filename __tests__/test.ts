@@ -55,7 +55,7 @@ describe("options: ", () => {
         }
       });
       expect(usage).toBe(
-        chalk.bold('--file') + chalk.dim(' ' + chalk.underline('string')) + ' '.repeat(4) + 'the file input.'
+        chalk.bold('--file') + chalk.dim(' ' + chalk.underline('string')) + ' '.repeat(4) + 'the file input.' + '\n'
       );
     });
 
@@ -67,7 +67,7 @@ describe("options: ", () => {
         }
       });
       expect(usage).toBe(
-        chalk.bold('--files') + chalk.dim(' ' + chalk.underline('string') + ' ...') + ' '.repeat(4) + 'the files input.'
+        chalk.bold('--files') + chalk.dim(' ' + chalk.underline('string') + ' ...') + ' '.repeat(4) + 'the files input.' + '\n'
       );
     });
 
@@ -79,7 +79,7 @@ describe("options: ", () => {
         }
       });
       expect(usage).toBe(
-        chalk.bold('--age') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + 'the age of the user.'
+        chalk.bold('--age') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + 'the age of the user.' + '\n'
       );
     });
 
@@ -91,7 +91,7 @@ describe("options: ", () => {
         }
       });
       expect(usage).toBe(
-        chalk.bold('--ages') + chalk.dim(' ' + chalk.underline('number') + ' ...') + ' '.repeat(4) + 'the ages of the users.'
+        chalk.bold('--ages') + chalk.dim(' ' + chalk.underline('number') + ' ...') + ' '.repeat(4) + 'the ages of the users.' + '\n'
       );
     });
 
@@ -103,7 +103,7 @@ describe("options: ", () => {
         }
       });
       expect(usage).toBe(
-        chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.'
+        chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.' + '\n'
       );
     });
 
@@ -118,7 +118,7 @@ describe("options: ", () => {
       }
     });
     expect(usage).toBe(
-      chalk.bold('-p, ') + chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.'
+      chalk.bold('-p, ') + chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.' + '\n'
     );
   });
 
@@ -130,7 +130,7 @@ describe("options: ", () => {
       }
     }, 4);
     expect(usage).toBe(
-      ' '.repeat(4) + chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.'
+      ' '.repeat(4) + chalk.bold('--power') + ' '.repeat(4) + 'whether use power output.' + '\n'
     );
   });
 
@@ -152,7 +152,8 @@ describe("options: ", () => {
     expect(usage).toBe(
       chalk.bold('--help') + ' '.repeat(26) + 'display help.\n' +
       chalk.bold('--version') + ' '.repeat(23) + 'display version.\n' +
-      chalk.bold('--very-very-very-long') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + 'the longest number.'
+      chalk.bold('--very-very-very-long') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + 'the longest number.' +
+      '\n'
     );
   });
 
@@ -169,7 +170,7 @@ describe("options: ", () => {
     });
     expect(usage).toBe(
       chalk.bold('--version') + ' '.repeat(23) + 'Display version.\n' +
-      chalk.bold('--very-very-very-long') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + `Lorem ipsum dolor sit amet, consectetur adipisic\n${' '.repeat(32)}ing elit, sed do eiusmod tempor incididunt ut la\n${' '.repeat(32)}bore et dolore magna aliqua. Ut enim ad minim ve\n${' '.repeat(32)}niam, quis nostrud exercitation ullamco laboris \n${' '.repeat(32)}nisi ut aliquip ex ea commodo consequat.`
+      chalk.bold('--very-very-very-long') + chalk.dim(' ' + chalk.underline('number')) + ' '.repeat(4) + `Lorem ipsum dolor sit amet, consectetur adipisic\n${' '.repeat(32)}ing elit, sed do eiusmod tempor incididunt ut la\n${' '.repeat(32)}bore et dolore magna aliqua. Ut enim ad minim ve\n${' '.repeat(32)}niam, quis nostrud exercitation ullamco laboris \n${' '.repeat(32)}nisi ut aliquip ex ea commodo consequat.` + '\n'
     );
   });
 

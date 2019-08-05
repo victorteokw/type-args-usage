@@ -65,5 +65,5 @@ export const options = function(
       values[key] = left[key] + padding + desc;
     }
   }
-  return (Object.values(values) as string[]).join('\n');
+  return (Object.values(values) as string[]).join('\n') + '\n';
 };
